@@ -7,12 +7,13 @@ _created 3 June, 2021;_
 ### Concepts of the day:
 Object-Oriented Programming
 
-* Object
+* Objects (also called instances in some cases?? idk. )
   * Item 2a
   * Item 2b
-* Class
-  * Item 2a
-  * Item 2b
+* Classs
+  * Instance variables
+  * Methods
+  * Constructor
 * Inheritance (extends? idk.)
   * Item 2a
   * Item 2b
