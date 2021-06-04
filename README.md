@@ -50,8 +50,8 @@ constructor shall not be extended except for 'default constructor'
  > public class Arashi extends Idol{}
 
  public class Arashi    extend      s Idol{} \
-              Arash     i is a      Idol
-          add Arashi variables into Idol    
+              Arash     i is a      Idol     \
+          add Arashi variables into Idol     \
 
  
   * Item 2b
