@@ -45,8 +45,8 @@ Object-Oriented Programming
 * e (extends? idk.)
   * Item 2a
 > public class Raichu extends Pikachu {}
-> field　＋　methods will be  from _Pikachu_ to _Raichu_.
-> constructor shall not be extended except for 'default constructor'
+field　＋　methods will be  from _Pikachu_ to _Raichu_. \
+constructor shall not be extended except for 'default constructor'
 	
  
  
