@@ -7,6 +7,9 @@ _created 3 June, 2021;_
 ### Concepts of the day:
 
 * What is Object-Oriented Programming?
+
+OOP VS Procedual programming; \
+
 * Objects (also called instances in some cases?? idk. )
   * Item 2a
   * Item 2b
@@ -58,4 +61,15 @@ constructor shall not be extended except for 'default constructor'
 
 >
 #### Encapsulation　
+
+
+public int getTasks() {
+			return this.tasks;
+		}  \
+  
+  main class \
+		System.out.println(emp.getName());
+  
+  
+  
 #### Polymorphism 多態性
