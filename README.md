@@ -47,7 +47,12 @@ Object-Oriented Programming
 field　＋　methods will be  from _Pikachu_ to _Raichu_. \
 constructor shall not be extended except for 'default constructor'
 
- > public class Raichu extends Pikachu {}
+ > public class Arashi extends Idol{}
+
+ public class Arashi    extend      s Idol{} \
+              Arash     i is a      Idol
+          add Arashi variables into Idol    
+
  
   * Item 2b
 
