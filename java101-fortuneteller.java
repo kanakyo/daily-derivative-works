@@ -3,15 +3,10 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /*
-
-■ オプション
-1.パスワード入力を行い、入力された値が"Pa$$w0rd"の場合、占いを行うようにする
-　パスワードが正しくない場合は、エラーメッセージを出力する
-2.名前を入力せずにEnterを押下した場合、再度、名前入力を促す
-　※ while文（テキストP63の知識が必要）
+pw=nerv000
  */
 
-public class Nerai {
+public class fortuneteller{
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO 自動生成されたメソッド・スタブ
@@ -28,7 +23,7 @@ public class Nerai {
 			
 		System.out.println("パスワード入力..." );
 		String pw = new java.util.Scanner(System.in).nextLine();
-		while(!pw.equals("Pa$$w0rd")){
+		while(!pw.equals("nerv000")){
 		  //処理
 			System.out.println("正しいパスワードを入力してくれ" );
 			pw = new java.util.Scanner(System.in).nextLine();   
@@ -44,7 +39,7 @@ public class Nerai {
 		if (name.equals("渚カヲル")) {
 			System.out.println("いつでも大吉です！" );
 		}else if(name.equals("碇シンジ")) {
-			System.out.println("渚カヲルと結婚したら大吉になれるよ。");
+			System.out.println("占い師より渚カヲルを信じろう。");
 		}else if(num == 3) {
 			System.out.println("凶です。");
 		}else if (num == 0) {
