@@ -5,8 +5,8 @@ Some derivative works based on daily tasks as a Java beginner.
 ## Work 1: Pikachu 0
 _created 3 June, 2021;_
 ### Concepts of the day:
-Object-Oriented Programming
 
+* What is Object-Oriented Programming?
 * Objects (also called instances in some cases?? idk. )
   * Item 2a
   * Item 2b
@@ -14,9 +14,6 @@ Object-Oriented Programming
   * Instance variables
   * Methods
   * Constructor
-* Inheritance (extends? idk.)
-  * Item 2a
-  * Item 2b
 
 
 A Pokemon game is designed to help understanding 
@@ -33,3 +30,27 @@ mp:900| mp: 1100
 ------------ | -------------
 functions; | functions;
 volt(); | water();
+
+
+
+
+
+## Work 2: -
+_created 4 June, 2021;_
+
+### Concepts of the day:
+Object-Oriented Programming
+
+#### Inheritance ・継承
+* e (extends? idk.)
+  * Item 2a
+> public class Raichu extends Pikachu {}
+> field　＋　methods will be  from _Pikachu_ to _Raichu_.constructor shall not be extended except for 'default constructor'
+	
+ 
+ 
+  * Item 2b
+
+>
+#### Encapsulation　
+#### Polymorphism 多態性
