@@ -87,32 +87,23 @@ public int getTasks() {
   * RunTimeException 
 * 1.4 例外の発生と例外インスタンス
   *  例外インスタンスの受け渡し
-    *   methods: 
+    *   inside try{}, JVM run the prgm while monitoring Exceptions, once it happens, catch{}
 ```java
 package model;
 import java.io.FileWriter;
 import java.io.IOException;
-
 public class ExcepS1 {
-	
-	
-
-	public static void main(String[] args) {
-		
+public static void main(String[] args) {
 		try {
 		FileWriter fw = new FileWriter("data.txt");
-		
 		fw.write("hello");
 		fw.close();
-		
 		}
 		catch(IOException e) {
 			System.out.print("failed");
 		}
 		System.out.print("end");
-
 	}
-
 }
 
 ```
