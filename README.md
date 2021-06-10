@@ -89,11 +89,32 @@ public int getTasks() {
   *  例外インスタンスの受け渡し
     *   methods: 
 ```java
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
+package model;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class ExcepS1 {
+	
+	
+
+	public static void main(String[] args) {
+		
+		try {
+		FileWriter fw = new FileWriter("data.txt");
+		
+		fw.write("hello");
+		fw.close();
+		
+		}
+		catch(IOException e) {
+			System.out.print("failed");
+		}
+		System.out.print("end");
+
+	}
+
 }
+
 ```
   *  How to read StackTrace
 * 1.5 さまざまなcatch構文
