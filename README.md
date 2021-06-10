@@ -126,6 +126,7 @@ catch(NullPointerException String) {
 The code inside the finally{ } will always be executed, even if an exception is thrown from within the try or catch block.
  ```java
 try {
+   System.out.print("DONE");
 }
 catch(IOException String) {
      System.out.print("Error message: MemoryError");
@@ -135,7 +136,7 @@ catch(NullPointerException String) {
 }finally{
      System.out.print("The cod will always be executed no matter what. ");
 }
-
+```
 * 1.6例外の伝播
 * 1.7例外を発生させる
 
