@@ -23,8 +23,6 @@ A Pokemon game is designed to help understanding
 Object-Oriented Programming Concepts
 
 
-
-
 Pokemon 1    | Pokemon 2
 ------------ | -------------
 name:Kira| name: Terra   
@@ -33,9 +31,6 @@ mp:900| mp: 1100
 ------------ | -------------
 functions; | functions;
 volt(); | water();
-
-
-
 
 
 ## Work 2: -
@@ -86,7 +81,7 @@ public int getTasks() {
   * RunTimeException 
 * 1.4 例外の発生と例外インスタンス
   *  例外インスタンスの受け渡し
-    *   example(IOException): inside try{}, JVM run the prgm while monitoring Exceptions, once it happens, catch{}
+    *   example(IOException): inside *try{}*, JVM run the prgm while monitoring Exceptions, once it happens, *catch{}*
 ```java
 package model;
 import java.io.FileWriter;
@@ -106,22 +101,31 @@ public static void main(String[] args) {
 }
 
 ```
-  *  How to read StackTrace
+  *  How to read *StackTrace*
 * 1.5 さまざまなcatch構文
+  * try-catch
+ ```java
+try {
+}
+catch(IOException String) {
+     System.out.print("xxx");
+}
+```
+  * try-catch for 2 or more exceptions  *multi catch*
+ ```java
+try {
+}
+catch(IOException String) {
+     System.out.print("xxx");
+}
+catch(NullPointerException String) {
+     System.out.print("xxx");
+}
+```
+* 1.6例外の伝播
+* 1.7例外を発生させる
 
-1.  try-catch
 
-#### 1.3例外クラスとその種類
-
-Error, Exceptional, RunTimeException 
-
-check 例外
-
-
-
-#### 1.6例外の伝播
-
-#### 1.7例外を発生させる
 
 ### 第2章 文字列の操作
 
