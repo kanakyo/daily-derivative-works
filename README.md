@@ -68,7 +68,18 @@ public int getTasks() {
   
 #### Polymorphism 多態性
 
-
+**Radio Button**
+```html
+<form action="CalcServlet" method="post"> 
+Name <input type="text" name="name"><br>
+Birth<input type="text" name="num1"><br>
+<br>
+<input type="radio" name="game" value="stars">   <font color="#EBFFE9" size=3>Counting Stars★</font><br> 
+<input type="radio" name="game" value="moon"> <font color="#EBFFE9" size=3> Talking to the Moon☽</font> <br>
+ <br>
+<input type="submit" value="Check out"><br>
+</form>
+ ```
 
 ## Work 5 ()
 
@@ -158,7 +169,9 @@ catch(NullPointerException String) {
 
 ### 第3章コレクション
 * 3.1コレクションとは
-  * 
+  * コレクション制約
+  * Only Instance / Objects could be stored in Collection Classes
+  * The built-in types(integral types byte, short, int, long, char, floating-point) cannot be 
 * 3.2 ArrayListの使いかた
 * 3.3 ArrayListの上位インタフェース
 * 3.4 Mapの使いかた
