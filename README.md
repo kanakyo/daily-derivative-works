@@ -78,11 +78,25 @@ public int getTasks() {
 
 ## Work 5 ()
 
-### 1 エラーの種類と対応策
-
-#### 1.1例外処理の流れ
-
-#### 1.2 例外処理の流れ
+### 第1章 エラーの種類と対応策
+* 1.1 例外処理の流れ
+* 1.2 例外処理の流れ
+* 1.3 例外クラスとその種類
+  * Error; FormatError, MemoryError, etc.
+  * Exceptional; ConnectException, etc.
+  * RunTimeException 
+* 1.4 例外の発生と例外インスタンス
+  *  例外インスタンスの受け渡し
+    *   methods: 
+```java
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
+  *  How to read StackTrace
+* 1.5 さまざまなcatch構文
 
 1.  try-catch
 
@@ -100,7 +114,7 @@ check 例外
 
 #### 1.7例外を発生させる
 
-### 第2章文字列の操作
+### 第2章 文字列の操作
 
 2.1文字列処理とは
 
