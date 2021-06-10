@@ -76,11 +76,12 @@ public int getTasks() {
 * 1.1 例外処理の流れ
 * 1.2 例外処理の流れ
 * 1.3 例外クラスとその種類
-  * **Error**; no catch required
+  * **Error**系; no catch required
     * FormatError, MemoryError, etc.
-  * **Exceptiona**; check例外
+  * **Exception**系; must-catch, check例外
     * ConnectException, etc.
-  * **RunTimeException** 
+  * **RunTimeException**系　非チェック例外
+    * IllegalArgument,
 * 1.4 例外の発生と例外インスタンス
   *  例外インスタンスの受け渡し
     *   example(IOException): inside **try{}**, JVM run the prgm while monitoring Exceptions, once it happens, **catch{}**
@@ -141,8 +142,10 @@ catch(NullPointerException String) {
 ```
 * 1.6例外の伝播
   * 例外の伝播による強制終了
-  * throw statement for **Exception(check例外)
+  * throw statement 
+    * for **EXception(check例外)
 * 1.7例外を発生させる
+  * report exceptions to JVM
 
 
 
