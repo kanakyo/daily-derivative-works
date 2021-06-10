@@ -49,9 +49,9 @@ Object-Oriented Programming
   * Item 2a
 field　＋　methods will be  from _Pikachu_ to _Raichu_. \
 constructor shall not be extended except for 'default constructor'
-
- > public class Arashi extends Idol{}
-
+```java
+ public class Arashi extends Idol{}
+```
  public class Arashi    extend      s Idol{} \
               Arash     i is a      Idol     \
           add Arashi variables into Idol     \
@@ -62,14 +62,13 @@ constructor shall not be extended except for 'default constructor'
 >
 #### Encapsulation　
 
-
+```java
 public int getTasks() {
 			return this.tasks;
 		}  \
-  
   main class \
 		System.out.println(emp.getName());
-  
+ ```
   
   
 #### Polymorphism 多態性
@@ -87,7 +86,7 @@ public int getTasks() {
   * RunTimeException 
 * 1.4 例外の発生と例外インスタンス
   *  例外インスタンスの受け渡し
-    *   inside try{}, JVM run the prgm while monitoring Exceptions, once it happens, catch{}
+    *   example(IOException): inside try{}, JVM run the prgm while monitoring Exceptions, once it happens, catch{}
 ```java
 package model;
 import java.io.FileWriter;
@@ -118,9 +117,7 @@ Error, Exceptional, RunTimeException
 
 check 例外
 
-#### 1.4例外の発生と例外インスタンス
 
-#### 1.5さまざまなcatch構文
 
 #### 1.6例外の伝播
 
