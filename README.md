@@ -142,8 +142,7 @@ catch(NullPointerException String) {
 ```
 * 1.6例外の伝播
   * 例外の伝播による強制終了
-  * throw statement 
-    * for **EXception(check例外)
+  * throw statement , for **EXception**(check例外)
 * 1.7例外を発生させる
   * report exceptions to JVM
 
