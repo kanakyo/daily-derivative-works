@@ -76,12 +76,12 @@ public int getTasks() {
 * 1.1 例外処理の流れ
 * 1.2 例外処理の流れ
 * 1.3 例外クラスとその種類
-  * Error; FormatError, MemoryError, etc.
-  * Exceptional; ConnectException, etc.
-  * RunTimeException 
+  * **Error**; FormatError, MemoryError, etc.
+  * **Exceptiona**; ConnectException, etc.
+  * **RunTimeException** 
 * 1.4 例外の発生と例外インスタンス
   *  例外インスタンスの受け渡し
-    *   example(IOException): inside *try{}*, JVM run the prgm while monitoring Exceptions, once it happens, *catch{}*
+    *   example(IOException): inside **try{}**, JVM run the prgm while monitoring Exceptions, once it happens, **catch{}**
 ```java
 package model;
 import java.io.FileWriter;
@@ -101,7 +101,7 @@ public static void main(String[] args) {
 }
 
 ```
-  *  How to read *StackTrace*
+  *  How to read **StackTrace**
 * 1.5 さまざまなcatch構文
   * try-catch
  ```java
