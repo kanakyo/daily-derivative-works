@@ -68,7 +68,11 @@ public int getTasks() {
   
 #### Polymorphism 多態性
 
+## Work ? 
+### HTML
+
 **Radio Button**
+in jsp 
 ```html
 <form action="CalcServlet" method="post"> 
 Name <input type="text" name="name"><br>
@@ -79,8 +83,30 @@ Birth<input type="text" name="num1"><br>
  <br>
 <input type="submit" value="Check out"><br>
 </form>
- ```
-
+```
+ in servlet 
+```java
+ 		//get request parameter
+		request.setCharacterEncoding("UTF-8");
+		int num1= Integer.parseInt(request.getParameter("num1"));
+		//int num2= Integer.parseInt(request.getParameter("name"));
+		String name = request.getParameter("name");
+		String game = request.getParameter("game");	
+		//biz logic, run
+		CalcLogic calc = new CalcLogic();
+		int ans = 0;
+		if(game.equals("stars")) {
+			ans = calc.process(num1);
+		}else if(game.equals("moon")) {
+			ans = calc.moon(num1);
+		}
+		//reqeust scope
+		request.setAttribute("ans",ans);
+		request.setAttribute("name",name);
+		//forward this to "calcResult.jsp"  
+		request.getRequestDispatcher("calcResult.jsp").forward(request, response); 	
+	}
+```
 ## Work 5 ()
 
 ### 第1章 エラーの種類と対応策
