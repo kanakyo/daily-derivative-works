@@ -76,8 +76,10 @@ public int getTasks() {
 * 1.1 例外処理の流れ
 * 1.2 例外処理の流れ
 * 1.3 例外クラスとその種類
-  * **Error**; FormatError, MemoryError, etc.
-  * **Exceptiona**; ConnectException, etc.
+  * **Error**; no catch required
+    * FormatError, MemoryError, etc.
+  * **Exceptiona**; check例外
+    * ConnectException, etc.
   * **RunTimeException** 
 * 1.4 例外の発生と例外インスタンス
   *  例外インスタンスの受け渡し
@@ -123,7 +125,7 @@ catch(NullPointerException String) {
 }
 ```
   * Finally 
-The code inside the finally{ } will always be executed, even if an exception is thrown from within the try or catch block.
+The code inside the **finally{ }** will always be executed, even if an exception is thrown from within the try or catch block.
  ```java
 try {
    System.out.print("DONE");
@@ -138,30 +140,24 @@ catch(NullPointerException String) {
 }
 ```
 * 1.6例外の伝播
+  * 例外の伝播による強制終了
+  * throw statement for **Exception(check例外)
 * 1.7例外を発生させる
 
 
 
 ### 第2章 文字列の操作
 
-2.1文字列処理とは
-
-2.2基本的な文字列操作
-
-2.3文字列の連結
-
-2.4正規表現の活用。
-
-2.5文字列の整形。
+* 2.1文字列処理とは
+* 2.2基本的な文字列操作
+* 2.3文字列の連結
+* 2.4正規表現の活用。
+* 2.5文字列の整形。
 
 ### 第3章コレクション
-
-3.1コレクションとは
-
-3.2 ArrayListの使いかた
-
-3.3 ArrayListの上位インタフェース
-
-3.4 Mapの使いかた
-
-3.5コレクションの応用
+* 3.1コレクションとは
+  * 
+* 3.2 ArrayListの使いかた
+* 3.3 ArrayListの上位インタフェース
+* 3.4 Mapの使いかた
+* 3.5コレクションの応用
