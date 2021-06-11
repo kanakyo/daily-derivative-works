@@ -269,10 +269,10 @@ public class HashMapS1 {
   
 * 第3章  更新系SQL文
 ```java
-Connection con = null;
+
 
 ```
-Step 0: Preparation 
+  * Step 0: Preparation 
 
 ```java
 try {
@@ -284,22 +284,33 @@ try {
 }
 
 ```
-Step 1: Set up Connection - to Database (h2) 
+Step 1: Set up Connection - to Database (h2) \
 DriverManager.getConnection(JDBC URL, Username, password)
 
 ```java
+Connection con = null;
 try{con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/mydb", "sa","");
 ```
-Step 2: SQL 雛形
+  * Step 2: SQL 雛形
 
+**Update**
+```java
+String sql =  "UPDATE FROM EMP(TABLE NAME)  SET ID=? WHERE ID=?";
+PreparedStatement pstmt = con.prepareStatement(sql);
+```
+**DETELE**
 ```java
 String sql =  "DELETE FROM EMP WHERE ID=?";
+
 PreparedStatement pstmt = con.prepareStatement(sql);
 ```
 Step 2: SQL 文　組み立て
 
 ```java
-	pstmt.setString(1, "1001");
+//update
+pstmt.setInt(123, 456);
+//delete
+pstmt.setString(1, "1001");
 ```
 Step 2: SQL文送信
 
