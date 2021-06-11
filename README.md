@@ -68,16 +68,16 @@ public int getTasks() {
   
 #### Polymorphism 多態性
 
-## Work ? 
+## Work 5 The Universe, the moon and stars
 ### HTML
 
-**Radio Button**
+example of **Radio Button** in a MVC Model
+
 in jsp 
 ```html
 <form action="CalcServlet" method="post"> 
 Name <input type="text" name="name"><br>
 Birth<input type="text" name="num1"><br>
-<br>
 <input type="radio" name="game" value="stars">   <font color="#EBFFE9" size=3>Counting Stars★</font><br> 
 <input type="radio" name="game" value="moon"> <font color="#EBFFE9" size=3> Talking to the Moon☽</font> <br>
  <br>
@@ -107,7 +107,9 @@ Birth<input type="text" name="num1"><br>
 		request.getRequestDispatcher("calcResult.jsp").forward(request, response); 	
 	}
 ```
-## Work 5 ()
+
+
+## JAVA API Programming
 
 ### 第1章 エラーの種類と対応策
 * 1.1 例外処理の流れ
@@ -202,3 +204,27 @@ catch(NullPointerException String) {
 * 3.3 ArrayListの上位インタフェース
 * 3.4 Mapの使いかた
 * 3.5コレクションの応用
+
+
+## JAVA & Database
+* 第1章 データベースの基礎
+  * 1.1 Database, relational database
+    * RD : Relational Database
+    * DBMS : - - Management System
+  * 1.2データベースの基本操作
+* 第2章 JDBCを用いたデータベース操作の基本手順
+  * 2.1 基本パターン
+  * JDBC API
+* 第3章更新系SQL文の送信
+  * 3.1 更新系SQL文の送信
+* 第4章検索系SQL文の送信
+  * 4.1 検索系SQL文の送信
+  * 4.2 結果表の処理
+* 第5章トランザクション
+  * 5.1トランザクション処理
+  * 5.2 JDBC経由でのトランザクション制御
+* 第6章DAOパターン
+  * 6.1 DAOとDTO 
+  * 6.2 DAOの例
+  * 6.3 DAOの改善
+  
