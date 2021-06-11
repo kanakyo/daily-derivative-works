@@ -202,7 +202,9 @@ catch(NullPointerException String) {
   * The built-in types(integral types byte, short, int, long, char, floating-point) cannot be 
 * 3.2 ArrayListの使いかた
 ArrayList <String> variablename = new ArrayList<String/int/etc>();
-```	public static void main(String[] args) {
+```java
+	
+public static void main(String[] args) {
 		
 		List <String> myFav = new ArrayList<String>();
 		System.out.println("私の好きなもの");
@@ -215,14 +217,14 @@ ArrayList <String> variablename = new ArrayList<String/int/etc>();
 		System.out.println(size+"つあります");
 ```
 拡張for文
-```
+```java
 
 for (String fv: myFav) {
 		System.out.println(fv);
 	}	
 ```
 for文
-```
+```java
 for(int i=size-1;i>=0;i--) {
 	String fv = myFav.get(i);
 	System.out.println(fv);
@@ -234,7 +236,7 @@ for(int i=size-1;i>=0;i--) {
 
 * 3.3 ArrayListの上位インタフェース
 * 3.4 Mapの使いかた
-```
+```java
 public class HashMapS1 {
 	public static void main(String[] args) {
 		Map<String,String>favMap= new HashMap<>();
@@ -266,13 +268,13 @@ public class HashMapS1 {
   * JDBC API
   
 * 第3章  更新系SQL文
-```
+```java
 Connection con = null;
 
 ```
 Step 0: Preparation 
 
-```
+```java
 try {
       Class.forName("org.h2.Driver");
 } catch (ClassNotFoundException e) {
@@ -285,28 +287,28 @@ try {
 Step 1: Set up Connection - to Database (h2) 
 DriverManager.getConnection(JDBC URL, Username, password)
 
-```
+```java
 try{con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/mydb", "sa","");
 ```
 Step 2: SQL 雛形
 
-```
+```java
 String sql =  "DELETE FROM EMP WHERE ID=?";
 PreparedStatement pstmt = con.prepareStatement(sql);
 ```
 Step 2: SQL 文　組み立て
 
-```
+```java
 	pstmt.setString(1, "1001");
 ```
 Step 2: SQL文送信
 
-```
+```java
 int r = pstmt.executeUpdate();
 ```
 Step 2: SQL文送信状態を判断
 
-```
+```java
 if(r==1) {
 		System.out.println("deleted");
 }else {
