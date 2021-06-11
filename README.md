@@ -273,15 +273,13 @@ Connection con = null;
 Step 0: Preparation 
 
 ```
-		try {
-			Class.forName("org.h2.Driver");
-			System.out.println("Step 0, Done");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			System.out.println("JDBC Driver Not found");
-			throw new IllegalStateException("JDBC Driver Not found");
-		}
-		
+try {
+      Class.forName("org.h2.Driver");
+} catch (ClassNotFoundException e) {
+	e.printStackTrace();
+	System.out.println("JDBC Driver Not found");
+	throw new IllegalStateException("JDBC Driver Not found");
+}
 
 ```
 Step 1: Set up Connection - to Database (h2) 
@@ -293,8 +291,8 @@ try{con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/mydb", "sa","")
 Step 2: SQL 雛形
 
 ```
-	String sql =  "DELETE FROM EMP WHERE ID=?";
-	PreparedStatement pstmt = con.prepareStatement(sql);
+String sql =  "DELETE FROM EMP WHERE ID=?";
+PreparedStatement pstmt = con.prepareStatement(sql);
 ```
 Step 2: SQL 文　組み立て
 
@@ -304,16 +302,16 @@ Step 2: SQL 文　組み立て
 Step 2: SQL文送信
 
 ```
-	int r = pstmt.executeUpdate();
+int r = pstmt.executeUpdate();
 ```
 Step 2: SQL文送信状態を判断
 
 ```
-	if(r==1) {
+if(r==1) {
 		System.out.println("deleted");
-	}else {
+}else {
 		System.out.println("ID NOT FOUND");
-	}
+}
 	pstmt.close();
 ```
   * 1 更新系SQL文の構成
