@@ -201,9 +201,58 @@ catch(NullPointerException String) {
   * Only Instance / Objects could be stored in Collection Classes
   * The built-in types(integral types byte, short, int, long, char, floating-point) cannot be 
 * 3.2 ArrayListの使いかた
+ArrayList <String> variablename = new ArrayList<String/int/etc>();
+```	public static void main(String[] args) {
+		
+		List <String> myFav = new ArrayList<String>();
+		System.out.println("私の好きなもの");
+		myFav.add("ロードレーサー");
+		myFav.add("ロードレーサーに乗っている時見える世界");
+		myFav.add("母さんの手料理");
+		myFav.add("寝言を喋る犬");
+		
+		int size = myFav.size();
+		System.out.println(size+"つあります");
+```
+拡張for文
+```
+
+for (String fv: myFav) {
+		System.out.println(fv);
+	}	
+```
+for文
+```
+for(int i=size-1;i>=0;i--) {
+	String fv = myFav.get(i);
+	System.out.println(fv);
+}       System.out.println(myFav);
+	}
+
+```
+
+
 * 3.3 ArrayListの上位インタフェース
 * 3.4 Mapの使いかた
+```
+public class HashMapS1 {
+	public static void main(String[] args) {
+		Map<String,String>favMap= new HashMap<>();
+		favMap.put("ジャニーズ", "Arashi");
+		favMap.put("イレギュラージャニーズ", "関ジャニ∞");
+		favMap.put("近畿ジャニーズ", "キンキキッズ");
+		favMap.put("errorkey","not data");
+		String jns = favMap.get("正統ジャニーズ");
+		System.out.print(jns);
+		
+		favMap.remove("errorkey");
+		System.out.print(favMap);
+	}
+}
+```
 * 3.5コレクションの応用
+
+
 
 
 ## JAVA & Database
@@ -215,10 +264,76 @@ catch(NullPointerException String) {
 * 第2章 JDBCを用いたデータベース操作の基本手順
   * 2.1 基本パターン
   * JDBC API
-* 第3章更新系SQL文の送信
-  * 3.1 更新系SQL文の送信
-* 第4章検索系SQL文の送信
-  * 4.1 検索系SQL文の送信
+  
+* 第3章  更新系SQL文
+```
+Connection con = null;
+
+```
+Step 0: Preparation 
+
+```
+		try {
+			Class.forName("org.h2.Driver");
+			System.out.println("Step 0, Done");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("JDBC Driver Not found");
+			throw new IllegalStateException("JDBC Driver Not found");
+		}
+		
+
+```
+Step 1: Set up Connection - to Database (h2) 
+DriverManager.getConnection(JDBC URL, Username, password)
+
+```
+try{con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/mydb", "sa","");
+```
+Step 2: SQL 雛形
+
+```
+	String sql =  "DELETE FROM EMP WHERE ID=?";
+	PreparedStatement pstmt = con.prepareStatement(sql);
+```
+Step 2: SQL 文　組み立て
+
+```
+	pstmt.setString(1, "1001");
+```
+Step 2: SQL文送信
+
+```
+	int r = pstmt.executeUpdate();
+```
+Step 2: SQL文送信状態を判断
+
+```
+	if(r==1) {
+		System.out.println("deleted");
+	}else {
+		System.out.println("ID NOT FOUND");
+	}
+	pstmt.close();
+```
+  * 1 更新系SQL文の構成
+
+  * 2 更新系SQL文の送信
+  * 
+```
+
+```
+  
+  
+* 第4章  検索系SQL文
+  * 1 検索系SQL文の構成
+```
+
+```
+  * 2 検索系SQL文の送信
+```
+
+```
   * 4.2 結果表の処理
 * 第5章トランザクション
   * 5.1トランザクション処理
