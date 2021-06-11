@@ -263,6 +263,9 @@ public class HashMapS1 {
     * RD : Relational Database
     * DBMS : - - Management System
   * 1.2データベースの基本操作
+    * 更新系: UPDATE, DELETE, INSERT
+    * 検索系: SELECT
+	
 * 第2章 JDBCを用いたデータベース操作の基本手順
   * 2.1 基本パターン
   * JDBC API
@@ -279,7 +282,6 @@ try {
       Class.forName("org.h2.Driver");
 } catch (ClassNotFoundException e) {
 	e.printStackTrace();
-	System.out.println("JDBC Driver Not found");
 	throw new IllegalStateException("JDBC Driver Not found");
 }
 
@@ -291,19 +293,22 @@ DriverManager.getConnection(JDBC URL, Username, password)
 Connection con = null;
 try{con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/mydb", "sa","");
 ```
-  * Step 2: SQL 雛形
-
+  * Step 2: SQL 雛形 \
+**PreparedStatement pstmt = con.prepareStatement();** \
+A SQL statement is precompiled and stored in a PreparedStatement object(SQL Container) \ 
 **Update**
 ```java
 String sql =  "UPDATE FROM EMP(TABLE NAME)  SET ID=? WHERE ID=?";
 PreparedStatement pstmt = con.prepareStatement(sql);
 ```
+**INSERT**
 **DETELE**
 ```java
 String sql =  "DELETE FROM EMP WHERE ID=?";
 
 PreparedStatement pstmt = con.prepareStatement(sql);
 ```
+	
 Step 2: SQL 文　組み立て
 
 ```java
