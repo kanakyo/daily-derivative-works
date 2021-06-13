@@ -216,13 +216,47 @@ public static void main(String[] args) {
 		int size = myFav.size();
 		System.out.println(size+"つあります");
 ```
-拡張for文
+**拡張for文** \
+	
+拡張for文を使う対象は、配列とコレクションのようなIterableのサブタイプである。\このような対象の内容を、すべて取得してある操作を実行しようとするとき拡張for文が使える。\
+	
 ```java
 
+for ( 型　変数名 : 式 ){
+  文;
+}
+
+
+public class EnhancedForArray {
+    public static void main (String[] args){
+        int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};//[1]
+        for (int number : numbers) {//[2]
+            System.out.println("[3] number = " + number);
+        }
+    }
+}
+```
+1] 配列変数numbersに初期値を代入する。\
+[2] [3] numberに配列の値を代入し、配列の数だけnumberの表示を繰り返す。	
+```java
+public class EnhancedForArray {
+    public static void main (String[] args){
+        int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};//[1]
+        for (int number : numbers) {//[2]
+            System.out.println("[3] number = " + number);
+        }
+    }
+}
+```
+1] 配列変数numbersに初期値を代入する。\
+[2] [3] numberに配列の値を代入し、配列の数だけnumberの表示を繰り返す。	
+```java
 for (String fv: myFav) {
 		System.out.println(fv);
 	}	
 ```
+	
+
 for文
 ```java
 for(int i=size-1;i>=0;i--) {
@@ -241,12 +275,9 @@ public class HashMapS1 {
 	public static void main(String[] args) {
 		Map<String,String>favMap= new HashMap<>();
 		favMap.put("ジャニーズ", "Arashi");
-		favMap.put("イレギュラージャニーズ", "関ジャニ∞");
-		favMap.put("近畿ジャニーズ", "キンキキッズ");
 		favMap.put("errorkey","not data");
 		String jns = favMap.get("正統ジャニーズ");
 		System.out.print(jns);
-		
 		favMap.remove("errorkey");
 		System.out.print(favMap);
 	}
@@ -270,7 +301,7 @@ public class HashMapS1 {
   * 2.1 基本パターン
   * JDBC API
   
-* 第3章  更新系SQL文
+### 第3章  更新系SQL文
 ```java
 
 
@@ -293,7 +324,7 @@ DriverManager.getConnection(JDBC URL, Username, password)
 Connection con = null;
 try{con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/mydb", "sa","");
 ```
-  * Step 2: SQL 雛形 \
+  * Step 2-1: SQL 雛形 \
 **PreparedStatement pstmt = con.prepareStatement();** \
 A SQL statement is precompiled and stored in a PreparedStatement object(SQL Container) \ 
 **Update**
@@ -302,6 +333,18 @@ String sql =  "UPDATE FROM EMP(TABLE NAME)  SET ID=? WHERE ID=?";
 PreparedStatement pstmt = con.prepareStatement(sql);
 ```
 **INSERT**
+String sql =  "INSERT INTO BOOK(ISBN,TITLE,PRICE,AUTHOR,FEATURE) VALUES(?,?,?,?,?)";
+PreparedStatement pstmt = con.prepareStatement(sql);
+
+pstmt.setString(1,book.getIsbn());
+pstmt.setString(2,book.getTitle());
+pstmt.setInt(3, book.getPrice());
+pstmt.setString(4,book.getAuthor());
+pstmt.setString(5,book.getFeature());
+int r = pstmt.executeUpdate();
+pstmt.close();
+return true;
+
 **DETELE**
 ```java
 String sql =  "DELETE FROM EMP WHERE ID=?";
@@ -309,7 +352,7 @@ String sql =  "DELETE FROM EMP WHERE ID=?";
 PreparedStatement pstmt = con.prepareStatement(sql);
 ```
 	
-Step 2: SQL 文　組み立て
+Step 2-2: SQL 文　組み立て
 
 ```java
 //update
@@ -317,20 +360,24 @@ pstmt.setInt(123, 456);
 //delete
 pstmt.setString(1, "1001");
 ```
-Step 2: SQL文送信
+Step 2-3: SQL文送信
 
 ```java
 int r = pstmt.executeUpdate();
 ```
-Step 2: SQL文送信状態を判断
+Step 2-4: SQL文送信状態を判断
 
 ```java
 if(r==1) {
-		System.out.println("deleted");
+	System.out.println("deleted");
 }else {
-		System.out.println("ID NOT FOUND");
+	System.out.println("ID NOT FOUND");
 }
 	pstmt.close();
+```
+Step 2-5: SQL文
+
+```java
 ```
   * 1 更新系SQL文の構成
 
