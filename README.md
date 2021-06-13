@@ -269,6 +269,10 @@ for(int i=size-1;i>=0;i--) {
 
 
 * 3.3 ArrayListの上位インタフェース
+	
+ArrayList <Book> booklist = new ArrayList<>();
+
+
 * 3.4 Mapの使いかた
 ```java
 public class HashMapS1 {
@@ -375,9 +379,22 @@ if(r==1) {
 }
 	pstmt.close();
 ```
-Step 2-5: SQL文
+Step 2-5: SQL文 close
 
 ```java
+}catch(SQLException e) {
+	e.printStackTrace();
+	return null;	
+}finally {
+	if(con != null) {
+	try {
+	      System.out.println("Step 2.5 con != null, Done");
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
 ```
   * 1 更新系SQL文の構成
 
@@ -390,8 +407,15 @@ Step 2-5: SQL文
   
 * 第4章  検索系SQL文
   * 1 検索系SQL文の構成
+**ResultSet rs = pstmt.executeQuery();**
 ```
+System.out.println("enter the keyword of the title");
+String keywd = new java.util.Scanner(System.in).nextLine();
 
+String sql =  "SELECT* FROM BOOK WHERE TITLE LIKE ?";
+PreparedStatement pstmt = con.prepareStatement(sql);
+pstmt.setString(1, "%"+ keywd +"%");
+ResultSet rs = pstmt.executeQuery();
 ```
   * 2 検索系SQL文の送信
 ```
