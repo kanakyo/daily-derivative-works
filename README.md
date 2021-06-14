@@ -461,5 +461,19 @@ public class Dept {
 	}
 ```
   * 6.2 DAOの例
+public Dept select(int id) throws SQLException {
+.......
+String sql = "SELECT * FROM DEPT WHERE ID=?";
+	PreparedStatement pstmt = con.prepareStatement(sql);	
+	pstmt.setInt(1, id);
+	ResultSet rs = pstmt.executeQuery();
+	Dept dept = null;
+	if (rs.next()) {
+		dept = new Dept();				
+	dept.setId(rs.getInt("ID"));
+		dept.setName(rs.getString("NAME"));
+	}
+		pstmt.close();
+		return dept;
   * 6.3 DAOの改善
   
