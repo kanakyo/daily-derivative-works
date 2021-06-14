@@ -503,5 +503,20 @@ public Dept select(int id) throws SQLException {
 		}
 	
 ```
+SelectAll method 
+```JAVA
+			String sql = "SELECT * FROM DEPT";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			List<Dept> list = new ArrayList<>();
+			while (rs.next()) {
+				Dept dept = new Dept();
+				dept.setId(rs.getInt("ID"));
+				dept.setName(rs.getString("NAME"));
+				list.add(dept);
+			}
+			pstmt.close();
+			return list;
+```
   * 6.3 DAOの改善
   
