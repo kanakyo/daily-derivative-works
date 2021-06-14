@@ -461,19 +461,47 @@ public class Dept {
 	}
 ```
   * 6.2 DAOの例
+```JAVA
 public Dept select(int id) throws SQLException {
 .......
-String sql = "SELECT * FROM DEPT WHERE ID=?";
-	PreparedStatement pstmt = con.prepareStatement(sql);	
-	pstmt.setInt(1, id);
-	ResultSet rs = pstmt.executeQuery();
-	Dept dept = null;
-	if (rs.next()) {
-		dept = new Dept();				
-	dept.setId(rs.getInt("ID"));
-		dept.setName(rs.getString("NAME"));
-	}
-		pstmt.close();
-		return dept;
+
+		/* STEP 0:JDBCドライバの有効化 */
+		try {
+			Class.forName("org.h2.Driver");
+		} catch (ClassNotFoundException e) {
+			throw new IllegalStateException("JDBCドライバのロードに失敗しました");
+		}
+
+		Connection con = null;
+		try {
+			/* STEP 1:データベースの接続 */
+			con = DriverManager.getConnection(
+					"jdbc:h2:tcp://localhost/~/mydb", "sa", "");
+
+			/* STEP 2:SQL送信処理 */
+			String sql = "SELECT * FROM DEPT WHERE ID=?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			Dept dept = null;
+			if (rs.next()) {
+				dept = new Dept();
+				dept.setId(rs.getInt("ID"));
+				dept.setName(rs.getString("NAME"));
+			}
+			pstmt.close();
+			return dept;
+		} finally {
+			/* STEP 3:データベースとの接続を切断 */
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	
+```
   * 6.3 DAOの改善
   
