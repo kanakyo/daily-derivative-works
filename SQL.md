@@ -1,16 +1,343 @@
-単元テスト『2021SQLDB事後テスト(20問)』への回答（編集不可）
+Q04.以下の文を実行した結果として正しいものを選べ
+
+int trapQuestion = 3;
+
+if(trapQuestion = 0) {
+
+   System.out.println("ひっかけ問題は含まれません");
+
+}
+
+ 
+3が表示される
+
+
+ 
+コンパイルエラーになる
+
+
+ 
+「ひっかけ問題は含まれません」と表示される
+
+
+ 
+**実行できるがなにも表示されない 不正解 「コンパイルエラーになる 」が正解**
+
+
+
+
+#### Q07.以下の文は、戻り値の型がintのメソッドの{}内の処理である。このメソッドの説明として正しいものを選べ
+```JAVA
+int x = 10;
+
+return x;
+
+x++;
+
+System.out.println(x);
+```
+
+ 
+このメソッドの呼び出し元に10を戻す（出力は行われない）
+ 
+コンパイルエラーとなる
+
+ 
+このメソッドの呼び出し元に11を戻した後、11が出力される
+
+ 
+**このメソッドの呼び出し元に10を戻した後、11が出力される 不正解 「コンパイルエラーとなる 」が正解**
+ 
+
+#### インスタンス化と同時に名前(name)と年齢(age)を指定できるクラスPersonを作りたい。どのような宣言をクラスに含めるべきか
+
+
+ 
+public void setPerson(String name, int age) { … }
+
+
+ 
+public static void Person(String name, int age) { … }
+
+
+ 
+**public Person(String name, int age) { … } 正解**
+ 
+public void Person(String name, int age) { … }
+
+Q06.あるクラスAがメソッドaを持っている。このクラスを継承して別のクラスを作成することを禁止したいとき、クラスAの開発者はどのような設計を行うべきか。
+
+
+ 
+ローカル変数aの定義において、　「final int a;」とする
+
+クラスAの定義において、**「public final class A { ...」**のようにする
+
+ 
+**メソッドaの定義において、「public final void a() { ...」のようにする 不正解 「クラスAの定義において、「public final class A { ...」のようにする 」が正解**
+ 
+フィールドaの定義において、　「final int a;」とする
+
+
+### day3 デイリーチェック（Java）
+
+
+Q01.オブジェクト指向プログラミングについての説明として適切でないものはどれか
+
+ 
+現実世界をコンピュータの中に仮想的な存在として再現するための考え方である
+ 
+プログラムを実行するとオブジェクトが生まれて現実世界と同じ働きをするよう設計する 不正解 
+  
+**「 人物や物理的な物についてはクラスに定義するが、形のない概念は定義することができない 」が正解**
+ 
+プログラムを複数のクラスに分割する部品化のしくみの1つである
+
+
+
+Q03.
+次のように定義されたクラスPlayerについて、正しくインスタンス化できる記述を選べ
+
+```JAVA
+
+public class Player {
+
+　　String name;
+
+　　public void play(int num){ 
+
+　　　　System.out.println( this.name + "が" + num + "回プレイします") ; 
+
+　　}
+
+}
+
+```
+
+ 
+String p1 = new Player();
+
+
+ 
+Player p1 = new Player("");
+
+
+ 
+Player p1 = "";
+
+
+ 
+**Player p1 = new Player(); 正解**
+
+
+
+Q03で作成したインスタンスのplayメソッドを正しく呼び出す記述を選べ
+
+ 
+p1.play(num=5);
+
+ 
+p1.play(5);
+
+ 
+**p1.play("takahashi", 5); 不正解 「p1.play(5); 」が正解**
+ 
+p1.play(int num=5);
+
+
+
+Q06.次のように定義されたクラスDancerについて、正しくインスタンス化できる記述を選べ
+
+
+```
+public class Dancer {
+
+　　int hp;
+
+　　String name;
+
+　　public Dancer(int hp, String name) {
+
+　　　　this.hp = hp;
+
+　　　　this.name = name;
+
+　　}
+
+}
+
+```
+ 
+Dancer sanae = new Dancer(100);
+
+
+ 
+Dancer d = new Dancer();
+
+ 不正解 「Dancer d = new Dancer(100, "sanae"); 」が正解
+ 
+Dancer(100,"sanae") = Dancer();
+
+
+ 
+Dancer d = new Dancer(100, "sanae");
+
+
+
+
+Q07.
+以下のようなコードがあるとき、次の中で正しいインスタンス化の方法を選びなさい。
+
+
+```
+public class Company {
+
+    public Company() {
+
+        System.out.println("秘密結社");
+
+    }
+
+    public  void Company(String name) {
+
+        System.out.println(name);
+
+    }
+
+}
+```
+ 
+new Company("秘密結社")
+
+
+ 
+このクラスはインスタンス化できない
+
+
+ 
+**new Company()**
+
+
+ 
+**「new Comapny()」と「new Company("秘密結社")」の両方が可能 不正解** 「new Company() 」が正解
+
+
+Q08.コンストラクタについて、不適切な表記を選べ
+
+
+ 
+明示的に定義しなければ、自動的に空のコンストラクタが補われる
+
+
+ 
+コンストラクタはオーバーロードできない
+
+ 正解
+ 
+コンストラクタはインスタンス生成時に自動的に実行される
+
+
+ 
+コンストラクタ内では、フィールドの初期化以外にも、必要に応じてさまざまな処理を記述できる
+
+
+Q09.以下のGreetingクラスのhelloメソッドを使用したい場合、
+最初に行うことは何か、適切なものを選びなさい。
+
+```
+public class Greeting{
+
+    String name;
+
+    String country;
+
+    public void hello(){
+
+        System.out.println("hello");
+
+    }
+
+}
+```
+
+
+### D6
+
+Q01.サーブレットのURLをアドレスバーに入力してサーブレットをリクエストしたとき、実行されるメソッドはどれか
+
+
+ 
+doGet
+
+
+ 
+**doRequest 不正解 「doGet 」が正解**
+ 
+main
+
+
+ 
+doPost
+
+
+
+ 
+**該当するものはない 不正解 「Greetingクラスのインスタンスを生成する 」が正解**
+ 
+Greetingクラスのインスタンスを生成する
+
+
+ 
+変数の初期化を行う
+
+
+ 
+helloメソッドのインスタンスを生成する
+
+
+
+Q06.
+JSPでのJavaクラスのインポートの説明について、正しいものを選べ
+
+
+ 
+pageディレクティブにimport属性を記述する
+
+
+ 
+複数のクラスをインポートすることはできない
+
+
+ 
+自作のクラスをインポートすることはできない
+
+
+ 
+<% ･･･ %>内にimport文を記述する
+
+ 不正解 「pageディレクティブにimport属性を記述する 」が正解
+
+
+## 単元テスト『2021SQLDB事後テスト(20問)』への回答（編集不可）
 あなたの得点率は70.0%です。
-Q01.
-リレーショナルデータベースの説明として適切でないものを選べ
+
+
+Q01.リレーショナルデータベースの説明として適切でないものを選べ
+
+
 Javaで開発したプログラムからアクセスできる
 データを操作するにはSQL文を使用する
+
+
 **表には行を一意に識別する外部キーがある**
-データを表形式の構造に格納し、リレーションシップで管理する
-**不正解 「表には行を一意に識別する外部キーがある 」が正解**
-Q02.
-次のなかで、オープンソースのRDBMS製品を選べ
+
+
+**データを表形式の構造に格納し、リレーションシップで管理する不正解 「表には行を一意に識別する外部キーがある 」が正解**
+
+Q02.次のなかで、オープンソースのRDBMS製品を選べ
 
 **H2 正解**
+
 SQL Server
 Db2
 Oracle Database
@@ -33,6 +360,8 @@ WHERE name = '%川%'
 WHERE name LIKE '*川*'
 WHERE name = '*川*'
 **WHERE name LIKE '%川%' 正解**
+
+
 Q05.
 「areaが関西、または、ageが20未満」という検索条件を満たす、WHERE句の記述を選べ
 
