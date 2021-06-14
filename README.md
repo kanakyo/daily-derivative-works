@@ -1,6 +1,14 @@
 # Daily derivative works
 Some derivative works based on daily tasks as a Java beginner. 
 
+## USEFUL LINES
+```java
+without contructor
+Employee emp = new Employee("Domoto");
+with constructor
+Pikachu pika = new Pikachu("Kira", 1100, 900);
+
+```
 
 ## Work 1: Pikachu 0
 _created 3 June, 2021;_
@@ -13,10 +21,13 @@ OOP VS Procedual programming; \
 * Objects (also called instances in some cases?? idk. )
   * Item 2a
   * Item 2b
+ 
 * Classs
+
   * Instance variables
   * Methods
   * Constructor コンストラクタ
+  
 ```java
 //method
 
@@ -27,8 +38,6 @@ public Pikachu(String name, int hp, int mp) {
 	}
 main:
 Pikachu pika = new Pikachu("Kira", 1100, 900);
-
-
  ```
 
 
@@ -444,6 +453,13 @@ ResultSet rs = pstmt.executeQuery();
   * 5.2 JDBC経由でのトランザクション制御
 * 第6章DAOパターン
   * 6.1 DAOとDTO 
+	* DTO 
+```JAVA
+public class Dept {
+	private int id;
+	private String name;
+	}
+```
   * 6.2 DAOの例
   * 6.3 DAOの改善
   
