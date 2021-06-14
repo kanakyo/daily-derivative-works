@@ -16,7 +16,20 @@ OOP VS Procedual programming; \
 * Classs
   * Instance variables
   * Methods
-  * Constructor
+  * Constructor コンストラクタ
+```java
+//method
+
+public Pikachu(String name, int hp, int mp) {
+	this.name = name;	
+	this.hp = hp;
+	this.mp = mp;
+	}
+main:
+Pikachu pika = new Pikachu("Kira", 1100, 900);
+
+
+ ```
 
 
 A Pokemon game is designed to help understanding 
@@ -38,6 +51,9 @@ _created 4 June, 2021;_
 
 ### Concepts of the day:
 Object-Oriented Programming
+
+
+
 
 #### Inheritance ・継承
 * e (extends? idk.)
@@ -337,6 +353,7 @@ String sql =  "UPDATE FROM EMP(TABLE NAME)  SET ID=? WHERE ID=?";
 PreparedStatement pstmt = con.prepareStatement(sql);
 ```
 **INSERT**
+```java	
 String sql =  "INSERT INTO BOOK(ISBN,TITLE,PRICE,AUTHOR,FEATURE) VALUES(?,?,?,?,?)";
 PreparedStatement pstmt = con.prepareStatement(sql);
 
@@ -348,7 +365,7 @@ pstmt.setString(5,book.getFeature());
 int r = pstmt.executeUpdate();
 pstmt.close();
 return true;
-
+```
 **DETELE**
 ```java
 String sql =  "DELETE FROM EMP WHERE ID=?";
@@ -408,7 +425,7 @@ Step 2-5: SQL文 close
 * 第4章  検索系SQL文
   * 1 検索系SQL文の構成
 **ResultSet rs = pstmt.executeQuery();**
-```
+```JAVA
 System.out.println("enter the keyword of the title");
 String keywd = new java.util.Scanner(System.in).nextLine();
 
