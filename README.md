@@ -3,11 +3,124 @@ Some derivative works based on daily tasks as a Java beginner.
 
 ## USEFUL LINES
 ```java
-without contructor
-Employee emp = new Employee("Domoto");
+インスタンスを生成
+Employee emp = new Employee();
+
+emp.name= "Akira";
+emp.tasks=3;
+
 with constructor
 Pikachu pika = new Pikachu("Kira", 1100, 900);
 
+method内自分自身のfieldを作る：
+
+this.task/name,...
+
+```
+
+クラス型
+
+* 最初から利用可能　int, String, double
+
+* EMPLOYEEクラスを定義すると利用可能な型：**EMPLOYEE型**
+
+クラス型変数の宣言
+```
+Employee emp
+```
+コンストラクタとみなされる条件
+
+*　１，メソッド名がクラス名と完全一致
+*　２．戻り値の定義がない
+```
+public calss Employee{
+public Employee(){
+}}
+```
+コンストラクタに引数を渡す
+Pikachu pika = new Pikachu("Kira", 1100, 900);
+
+別のコンストラクタを呼び出す；
+```
+this (引数);
+this("Dummy")
+```
+
+static によるフィールドの共有
+staticフィールド＝静的フィールド
+
+
+
+getter and setter
+
+
+```JAVA
+package model;
+public class Book {
+	private String isbn;
+	private String title;
+	private int price;
+	private String author;
+	private String feature;
+	
+	
+public Book(String isbn, String title, int price, String author, String feature) {
+	setIsbn(isbn);
+	setTitle(title);
+	setPrice(price);
+	setAuthor(author);
+	setFeature(feature);
+	}
+	
+getter method: フィールドのisbnの値を呼び出し元に返す
+public String getIsbn() {
+	return isbn;
+}
+フィールドに指定された値を代入
+public void setIsbn(String isbn) {
+	if(isbn.equals("")) {
+		throw new IllegalArgumentException("ISBNの値が不正です");
+	}
+	this.isbn = isbn;
+}
+
+
+----------------------------------------
+public class RegisterBook {
+Book book = new Book(isbn,title,price,auth,feat);
+	
+	RegisterBookLogic registerBookLogic =  new RegisterBookLogic();
+	boolean result = registerBookLogic.process(book);
+---------------------------------------
+public boolean process(Book book) {
+........
+        pstmt.setString(1,book.getIsbn());
+	pstmt.setString(2,book.getTitle());
+	pstmt.setInt(3, book.getPrice());
+
+```
+
+```
+request.setAttribute("books",books);
+ =()request.getAttribute("BOOK");
+String keyword=request.getParameter("keyword");
+
+```
+session scope
+```
+	// session scopeに格納
+	HttpSession session = request.getSession();
+	session.setAttribute("user", user);
+		or
+	HttpSession session = request.getSession();
+	Cart cart = (Cart)session.getAttribute("cart");
+	
+	
+	//JSP session scopeから取る
+	User user = (User)session.getAttribute("user");
+	......
+	Name <%= user.getName() %> <br>
+	ID   <%= user.getId() %> <br>
 ```
 
 ## Work 1: Pikachu 0
